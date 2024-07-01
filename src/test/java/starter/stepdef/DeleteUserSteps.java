@@ -4,21 +4,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import starter.reqres.ReqresAPI;
-
-import javax.naming.directory.SearchResult;
+import starter.gorest.GorestAPI;
 
 public class DeleteUserSteps {
 
     @Steps
-    ReqresAPI reqresAPI;
+    GorestAPI gorestAPI;
     @Given("Delete user with id {int}")
     public void deleteUserWithId(int userId) {
-        reqresAPI.deleteUser(userId);
+        gorestAPI.deleteUser(userId);
     }
 
     @When("Send request delete user")
     public void sendRequestDeleteUser() {
-        SerenityRest.when().delete(ReqresAPI.USER_WITH_ID);
+        SerenityRest.when().delete(gorestAPI.USER_WITH_ID);
     }
 }
