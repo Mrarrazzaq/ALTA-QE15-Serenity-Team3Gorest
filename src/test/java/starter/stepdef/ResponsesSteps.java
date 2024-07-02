@@ -33,6 +33,22 @@ public class ResponsesSteps {
                 .body(GorestResponses.NAME, equalTo(name))
                 .body(GorestResponses.EMAIL, equalTo(email));
     }
+
+    @And("Response body id should be {int} and title should be {string} and body should be {string}")
+    public void responseBodyIdShouldBeAndTitleShouldBeAndBodyShouldBe(int id, String title, String body) {
+        SerenityRest.and()
+                .body(GorestResponses.USER_ID, equalTo(id))
+                .body(GorestResponses.TITLE, equalTo(title))
+                .body(GorestResponses.BODY, equalTo(body));
+    }
+
+    @And("Response body title should be {string} and body {string}")
+    public void responseBodyTitleShouldBeAndBody(String title, String body) {
+        SerenityRest.and()
+                .body(GorestResponses.TITLE, equalTo(title))
+                .body(GorestResponses.BODY, equalTo(body));
+    }
+
     @And("Response body name should be token {string}")
     public void responseBodyNameShouldBeToken(String token) {
         SerenityRest.and()
@@ -57,5 +73,6 @@ public class ResponsesSteps {
         File jsonFile = new File(Constants.JSON_SCHEMA+fileName);
         SerenityRest.and().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
     }
+
 
 }
