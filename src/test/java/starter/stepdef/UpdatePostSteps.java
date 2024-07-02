@@ -24,4 +24,10 @@ public class UpdatePostSteps {
     public void sendRequestUpdatePost() {
         SerenityRest.when().put(GorestAPI.POST_WITH_ID);
     }
+
+    @Given("Update post with parameter id {int} and invalid json {string}")
+    public void updatePostWithParameterIdAndInvalidJson(int id, String jsonFileName) {
+        File jsonFile = new File(Constants.REQ_BODY+jsonFileName);
+        gorestAPI.putUdpatePost(id, jsonFile);
+    }
 }
