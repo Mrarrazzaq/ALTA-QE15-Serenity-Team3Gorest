@@ -9,7 +9,7 @@ import starter.utils.Constants;
 
 import java.io.File;
 
-public class UpdateUserStpes {
+public class UpdateUserSteps {
     @Steps
     GorestAPI gorestAPI;
 
