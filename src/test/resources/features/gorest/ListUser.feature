@@ -13,3 +13,9 @@ Feature: Get List Users API
 
 #    Catatan, kalo mau pagenya cuma satu misal "2", hapus tulisan Outline <page> dan example ganti dengan 2
   # Kalau tipenya string ganti menjadi "<string>"
+
+  @Project
+  Scenario: Get List users with invalid parameter page
+    Given Get List users with invalid parameter page "^@%$&*@@#"
+    When Send request get list users invalid
+    And Status code should be 404

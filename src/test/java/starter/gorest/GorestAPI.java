@@ -9,6 +9,7 @@ import java.io.File;
 
 public class GorestAPI {
     public static String LIST_USERS = Constants.BASE_URL+"/public/v2/users/";
+    public static String LIST_USERS_INVALID = Constants.BASE_URL+"/public/v2/users/{page}";
     public static String CREATE_USER = Constants.BASE_URL+"/public/v2/users";
     public static String USER_WITH_ID = Constants.BASE_URL+"/public/v2/users/{id}";
     public static String SINGLE_USER = Constants.BASE_URL+"/public/v2/users/{id}";
@@ -23,6 +24,12 @@ public class GorestAPI {
                 .when()
                 .get(GorestAPI.LIST_USERS);
 
+    }
+
+    @Step("Get list user invalid pharameter")
+    public void getListUsersInvalid(String page){
+        SerenityRest.given()
+                .pathParam("page", page);
     }
 
     @Step("Get single user")
@@ -43,11 +50,27 @@ public class GorestAPI {
                 .body(json);
     }
 
+    @Step("Create new user no API Key")
+    public void postCreateNewUserNoKey(File json){
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + Constants.TOKEN)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
     @Step("Update_user")
     public void putUdpateUser(int id, File json){
         SerenityRest.given()
                 .pathParam("id", id)
                 .header("Authorization", "Bearer " + Constants.TOKEN)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    @Step("Update_user_no_APIKEY")
+    public void putUdpateUserNoAPIKey(int id, File json){
+        SerenityRest.given()
+                .pathParam("id", id)
                 .contentType(ContentType.JSON)
                 .body(json);
     }

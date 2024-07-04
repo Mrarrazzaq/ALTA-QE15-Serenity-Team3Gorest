@@ -19,6 +19,12 @@ public class CreateUserSteps {
         gorestAPI.postCreateNewUser(fileJson);
     }
 
+    @Given("Create new user with valid file json {string} with no API Key")
+    public void createNewUserWithValidFileJsonWithNoAPIKey(String fileName) {
+        File fileJson = new File(Constants.REQ_BODY+fileName);
+        gorestAPI.postCreateNewUserNoKey(fileJson);
+    }
+
     @When("Send request post create user")
     public void sendRequestPostCreateUser() {
         SerenityRest.when().post(gorestAPI.CREATE_USER);
