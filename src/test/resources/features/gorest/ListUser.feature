@@ -5,12 +5,7 @@ Feature: Get List Users API
     When Send request get list users
     And  Status code should be 200
     Then Validate json schema "list_users_json_schema.json"
-
-
-
-#    Catatan, kalo mau pagenya cuma satu misal "2", hapus tulisan Outline <page> dan example ganti dengan 2
-  # Kalau tipenya string ganti menjadi "<string>"
-
+#Fix code
   @Project
   Scenario: Get List users with invalid parameter page
     Given Get List users with invalid parameter page "^@%$&*@@#"
