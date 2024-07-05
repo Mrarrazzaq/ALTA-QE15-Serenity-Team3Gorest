@@ -26,4 +26,8 @@ public class SingleUserSteps {
         SerenityRest.when().get(gorestAPI.SINGLE_USER);
     }
 
+    @Given("user with id {int}")
+    public void userWithId(int userId) {
+        gorestAPI.getSingleUser(userId);
+    }
 }
