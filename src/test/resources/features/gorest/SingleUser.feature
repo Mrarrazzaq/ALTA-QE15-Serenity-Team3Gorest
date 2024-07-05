@@ -1,14 +1,9 @@
-#Feature: Get single user API
-#  @tugas
-#  Scenario Outline: Get single user with valid parameter page
-#    Given Single user with id 6940187
-#    When Send request get single user
-#    Then Status code should be 200
-#    And Response body page should be "<name>" and "<email>"
-#    And Validate json schema "single_user_json_schema.json"
-#    Examples:
-#    |name               |email                                |
-#    |Chandramauli Guneta|guneta_chandramauli@wilderman.example|
+Feature: Get single user API
+  @Project
+  Scenario: Get List users with valid parameter page
+    Given user with id 6940231
+    When  Send request get single user
+    Then  Status code should be 200
 #
 #    @tugas
 #    Scenario: Get single user not found
