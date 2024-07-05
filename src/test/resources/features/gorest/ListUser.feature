@@ -8,6 +8,6 @@ Feature: Get List Users API
 #Fix code
   @Project
   Scenario: Get List users with invalid parameter page
-    Given Get List users with invalid parameter page "^@%$&*@@#"
+    Given Get List users with invalid parameter page "**********"
     When Send request get list users invalid
     And Status code should be 404
