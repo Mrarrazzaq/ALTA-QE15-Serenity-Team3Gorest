@@ -28,7 +28,7 @@ public class UpdateUserSteps {
     @When("Send request put update user")
     public void sendRequestPutUpdateUser() {
         SerenityRest.when().put(gorestAPI.USER_WITH_ID);
-        if (SerenityRest.then().extract().statusCode() != 200) {
+        if (SerenityRest.then().extract().statusCode() != 404) {
             System.out.println("Error response: " + SerenityRest.then().extract().body().asString());
         }
     }

@@ -1,5 +1,5 @@
+@Post
 Feature: Update Post API
-  @Project
   Scenario: Update post with valid parameter id and valid json
     Given Update post with parameter id 139028 and valid json "update_post.json"
     When Send request update post

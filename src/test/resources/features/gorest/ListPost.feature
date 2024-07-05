@@ -1,5 +1,5 @@
+@Post
 Feature: Get List Posts API
-  @Project
   Scenario: Get List posts with valid parameter page
     Given Get List posts with parameter page 1
     When Send request get list posts

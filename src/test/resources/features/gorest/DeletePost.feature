@@ -1,7 +1,7 @@
+@Post
 Feature: Delete a post
-  @Project
   Scenario: Delete post with valid parameter id
-    Given Delete post with id 139026
+    Given Delete post with id 139706
     When  Send request delete post
     Then  Status code should be 204
 

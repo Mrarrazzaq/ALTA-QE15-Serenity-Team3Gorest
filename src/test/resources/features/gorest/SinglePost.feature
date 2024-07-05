@@ -1,5 +1,5 @@
+@Post
 Feature: Get Single Post API
-  @Project
   Scenario: Get List posts with valid parameter id
     Given Get single posts with parameter id 139144
     When Send request get single posts

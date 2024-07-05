@@ -23,6 +23,9 @@ public class CreatePostSteps {
     @When("Send request create post")
     public void sendRequestCreatePost() {
         SerenityRest.when().post(gorestAPI.CREATE_POST);
+        if (SerenityRest.then().extract().statusCode() != 201) {
+            System.out.println("Error response: " + SerenityRest.then().extract().body().asString());
+        }
     }
 
 
