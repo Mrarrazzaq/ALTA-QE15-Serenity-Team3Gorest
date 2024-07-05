@@ -12,8 +12,12 @@ This project is a Serenity-based API testing framework written in Java. It uses 
 * **[Spreadsheet](https://docs.google.com/spreadsheets/d/1JxArfXoNR1VYAyAyAseJz_zzaPHjObYQmekzQQtSsSA/edit?gid=1980146847#gid=1980146847)**
 
 ## Overall test report
+![image](https://github.com/Mrarrazzaq/ALTA-QE15-Serenity-Team3Gorest/assets/32107989/ce85b535-948f-4c84-9475-79b80939953a)
+
 
 ## Feature coverage
+![image](https://github.com/Mrarrazzaq/ALTA-QE15-Serenity-Team3Gorest/assets/32107989/b2a457f1-6ec3-4b32-8506-55bcf2ebd16c)
+
 
 ## Tools and Technologies
 - **Java 1.8**: The programming language used for writing the test scripts.
